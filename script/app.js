@@ -9,9 +9,16 @@ const fetchCategorie = async () => {
     const res = await fetchs.json();
     const data = res.data.forEach((data) => {
         const button = document.createElement('button');
-        button.classList = "border py-2 px-5 rounded-md bg-[#25252533] text-black";
+        button.classList = "buttonBgColor border py-2 px-5 rounded-md bg-[#25252533] text-black";
         button.innerText = data.category;
-        button.addEventListener('click', () => fetchDataByCategories(data.category_id));
+        button.addEventListener('click', () => {
+            fetchDataByCategories(data.category_id);
+            const allBtn = document.querySelectorAll('.buttonBgColor');
+            for(const btn of allBtn){
+                btn.classList.remove('bg-red-600','text-white')
+            }
+            button.classList.add('bg-red-600','text-white')
+        });
         btnContainer.appendChild(button);
     });
 }
