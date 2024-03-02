@@ -35,9 +35,9 @@ const videos = (data) => {
         const newVideo = document.createElement('div');
         newVideo.innerHTML = `
         <div class="card bg-base-100 shadow-xl h-[300] rounded-md">
-        <figure class="h-[200px] rounded-md">
-            <img class="object-cover h-full w-full" src="${video.thumbnail}" alt="Shoes" />
-            <h6 class="absolute bottom-[38%] lg:bottom-[22%] right-2 text-white text-sm">0 hr</h6>
+        <figure class="h-[200px] rounded-md p-1">
+            <img class="object-cover h-full w-full rounded-lg" src="${video.thumbnail}" alt="Shoes" />
+            <h6 class="absolute bottom-[38%] lg:bottom-[22%] right-3 text-white text-sm">0 hr</h6>
         </figure>
         <div class="px-2 mt-3">
             <div class="flex gap-4 justify-start items-start">
