@@ -1,5 +1,6 @@
 const btnContainer = document.getElementById('btnContainer');
 const videoContainer = document.getElementById('videoContainer');
+const noVideo = document.getElementById('noVideo');
 let selectedCategory = 1000;
 
 const fetchCategorie = async () => {
@@ -24,6 +25,12 @@ const fetchDataByCategories = (categoryId) => {
 
 const videos = (data) => {
     videoContainer.innerHTML = '';
+    if (data.length === 0){
+        noVideo.classList.remove('hidden');
+    }
+    else{
+        noVideo.classList.add('hidden')
+    }
     data.forEach((video) => {
         let verified
         if(video.authors[0].verified === true){
